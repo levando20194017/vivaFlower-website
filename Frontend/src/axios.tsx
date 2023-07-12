@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import _ from 'lodash';
 // import config from './config';
 
@@ -8,9 +8,9 @@ const instance = axios.create({
 });
 
 instance.interceptors.response.use(
-    (response: AxiosResponse<any>) => {
-        const { data } = response;
-        return response.data;
+    (response) => {
+        // const { data } = response;
+        return response;
     }
 );
 
