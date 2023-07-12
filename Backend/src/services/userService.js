@@ -56,7 +56,7 @@ let handleUserLogin = (email, password) => {
 let checkUserEmail = (userEmail) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await db.User.findOne({
+            let user = await db.Users.findOne({
                 where: { email: userEmail }
             })
             if (user) {
@@ -72,7 +72,7 @@ let checkUserEmail = (userEmail) => {
 let checkUserPassword = (userId, userPassword) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = await db.User.findOne({
+            let user = await db.Users.findOne({
                 where: { id: userId }
             })
             if (user && user.password === userPassword) {
@@ -91,14 +91,14 @@ let getAllUsers = (userId) => {
         try {
             let users = '';
             if (userId == 'ALL') {
-                users = await db.User.findAll({
+                users = await db.Users.findAll({
                     attributes: {
                         exclude: ['password']
                     }
                 })
             }
             if (userId && userId !== 'ALL') {
-                users = await db.User.findOne({
+                users = await db.Users.findOne({
                     where: { id: userId },
                     attributes: {
                         exclude: ['password']
@@ -122,7 +122,7 @@ let createNewUser = (data) => {
                 })
             } else {
                 let hashPasswordFormBcrypt = await hashUserPassword(data.password);
-                await db.User.create({
+                await db.Users.create({
                     email: data.email,
                     password: hashPasswordFormBcrypt,
                     fullName: data.fullName,
@@ -146,7 +146,7 @@ let createNewUser = (data) => {
 let deleteUser = (userId) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let user = db.User.findOne({
+            let user = db.Users.findOne({
                 where: { id: userId }
             })
             if (user) {
@@ -181,7 +181,7 @@ let updateUserData = (data) => {
             let hashPasswordFormBcrypt = await hashUserPassword(data.password);
             let checkEmail = await checkUserEmail(data.email);
             if (checkEmail === false) {
-                let user = await db.User.findOne({
+                let user = await db.Users.findOne({
                     where: { id: data.id },
                     raw: false
                 });
@@ -226,7 +226,7 @@ let handleEditProfile = (data) => {
                     message: "Missing required parameters!"
                 })
             }
-            let user = await db.User.findOne({
+            let user = await db.Users.findOne({
                 where: { id: data.id },
                 raw: false
             });
@@ -272,7 +272,7 @@ let handleChangePassword = (data) => {
                 })
             }
             let hashNewPasswordFormBcrypt = await hashUserPassword(data.newPassword);
-            let user = await db.User.findOne({
+            let user = await db.Users.findOne({
                 where: { id: data.id },
                 raw: false
             });

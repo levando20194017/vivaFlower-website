@@ -14,22 +14,10 @@ interface ResponseData {
   errCode: number;
   message: string;
   users: User[];
-  // other properties
 }
-// interface Post {
-//     id?: number,
-//     userId: string,
-//     title: string,
-//     body: string
-// }
+
 export const Home = () => {
   const [users, setUsers] = useState<User[]>([])
-  // const [posts, setPosts] = useState<Post[]>([])
-  // const [post, setPost] = useState<Post>({
-  //     userId: "",
-  //     title: "",
-  //     body: ""
-  // })
   const [user, setUser] = useState<User>({
     fullName: "",
     email: "",
@@ -44,22 +32,13 @@ export const Home = () => {
   const deleteUser = () => {
 
   }
-  const getAllUserFromReact = async () => {
-    try {
-      const response: AxiosResponse<ResponseData> = await getAllUsers('ALL');
-      return response.data
-    } catch (error) {
-      console.log(error);
-
-    }
-  }
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getAllUserFromReact()
-      console.log();
+      const response: AxiosResponse<ResponseData> = await getAllUsers('ALL');
+      console.log(response);
 
-      if (response && response.errCode === 0) {
-        setUsers(response.users);
+      if (response && response.data.errCode === 0) {
+        setUsers(response.data.users);
       }
     };
 
