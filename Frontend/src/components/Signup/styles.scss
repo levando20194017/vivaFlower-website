@@ -212,15 +212,19 @@ ul.social-agileinfo li a i.bi {
   color: #fff;
   font-size: 150%;
   padding: 5px;
+  border: 1px solid #fff
 }
 ul.social-agileinfo li a i.bi.bi-facebook{
-color: rgb(0, 81, 255);
+background-color: rgb(0, 81, 255);
+margin-left: -15px;
 }
 ul.social-agileinfo li a i.bi.bi-twitter{
-  color: rgb(21, 128, 223);
+  background-color: rgb(21, 128, 223);
+  margin-left: 5px;
   }
   ul.social-agileinfo li a i.bi.bi-google{
-    color: #ff652f;
+    background-color: #cd410e;
+    margin-left: 5px;
   }
 ul.social-agileinfo li a i.bi.bi-facebook:hover {
   background-color: #3b5998;
