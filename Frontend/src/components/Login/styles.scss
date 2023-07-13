@@ -1,74 +1,12 @@
-article,
-
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 /* start editing from here */
 a {
   text-decoration: none;
 }
 
-.txt-rt {
-  text-align: right;
-}
-
-/* text align right */
-.txt-lt {
-  text-align: left;
-}
-
-/* text align left */
-.txt-center {
-  text-align: center;
-  /*-- W3Layouts --*/
-}
-
-/* text align center */
-.float-rt {
-  float: right;
-}
-
-/* float right */
-.float-lt {
-  float: left;
-}
-
 /* float left */
 .clear {
   clear: both;
-}
-
-/* clear float */
-.pos-relative {
-  position: relative;
-}
-
-/* Position Relative */
-.pos-absolute {
-  position: absolute;
-}
-
-/* Position Absolute */
-.vertical-base {
-  vertical-align: baseline;
-}
-
-/* vertical align baseline */
-.vertical-top {
-  vertical-align: top;
-}
-
-/* vertical align top */
-nav.vertical ul li {
-  display: block;
-}
-
-/* vertical menu */
-nav.horizontal ul li {
-  display: inline-block;
 }
 
 /* horizontal menu */
@@ -78,7 +16,7 @@ img {
 
 /*--- end reset code ---*/
 
-body {
+.signUp {
   background: url(../../assets/images/banner.jpg) no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -88,6 +26,7 @@ body {
   -o-background-size: cover;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  height: 100vh;
 }
 
 h1.w3ls {
@@ -128,13 +67,18 @@ h2.agileits1 {
   text-transform: uppercase;
   font-family: 'Monoton', cursive;
 }
+h2.agileits1 span{
+  transition: all .4s ease-out 0s
+}
 
 p.agileits2 {
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 500;
   color: #fff;
   text-align: center;
   text-transform: capitalize;
+  width: 80%;
+  transition: all .4s ease-out 0s
 }
 
 .content-w3ls .content-agile2 {
@@ -175,6 +119,7 @@ input#password1:hover,
 input#password2:hover {
   color: #fff;
   border-bottom: 5px solid #3970b0;
+  transition: all .4s ease-out 0s
 }
 
 input::-webkit-input-placeholder {
@@ -197,6 +142,7 @@ input:-ms-input-placeholder {
 
 input:hover::-webkit-input-placeholder {
   color: #3970b0 !important;
+  transition: all .4s ease-out 0s
 }
 
 input:hover:-moz-placeholder {
@@ -214,6 +160,7 @@ input:hover:-ms-input-placeholder {
 }
 
 input.register {
+  border-radius: 5px;
   width: 335px;
   margin: 30px auto;
   display: block;
@@ -236,7 +183,8 @@ input.register {
 
 input.register:hover {
   color: #fff;
-  background-color: #3970b0;
+  background-color: #39b0a6;
+  transition: all .4s ease-out 0s
 }
 
 p.wthree {
@@ -244,7 +192,6 @@ p.wthree {
   font-weight: normal;
   color: #fff;
   text-align: center;
-  text-transform: capitalize;
   padding-bottom: 20px;
 }
 
@@ -257,66 +204,43 @@ ul.social-agileinfo li {
   margin: 0;
 }
 
-ul.social-agileinfo li a i.fa {
+ul.social-agileinfo li a i.bi {
   width: 40px;
   height: 40px;
-  border: 1px solid #fff;
   text-align: center;
   line-height: 40px;
   color: #fff;
+  font-size: 150%;
+  padding: 5px;
 }
-
-ul.social-agileinfo li a i.fa.fa-facebook:hover {
+ul.social-agileinfo li a i.bi.bi-facebook{
+color: rgb(0, 81, 255);
+}
+ul.social-agileinfo li a i.bi.bi-twitter{
+  color: rgb(21, 128, 223);
+  }
+  ul.social-agileinfo li a i.bi.bi-google{
+    color: #ff652f;
+  }
+ul.social-agileinfo li a i.bi.bi-facebook:hover {
   background-color: #3b5998;
   color: #fff;
   border-color: #3b5998;
+  transition: all .4s ease-out 0s
 }
 
-ul.social-agileinfo li a i.fa.fa-twitter:hover {
+ul.social-agileinfo li a i.bi.bi-twitter:hover {
   background-color: #1da1f2;
   color: #fff;
   border-color: #1da1f2;
+  transition: all .4s ease-out 0s
 }
 
-ul.social-agileinfo li a i.fa.fa-youtube:hover {
+ul.social-agileinfo li a i.bi.bi-google:hover {
   background-color: #cd201f;
   color: #fff;
   border-color: #cd201f;
-}
-
-ul.social-agileinfo li a i.fa.fa-google-plus:hover {
-  /*-- w3ls --*/
-  background-color: #dd4b39;
-  color: #fff;
-  border-color: #dd4b39;
-}
-
-ul.social-agileinfo li a i.fa:hover {
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-  -moz-animation: spin 2s linear infinite;
-  -o-animation: spin 2s linear infinite;
-  -ms-animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  transition: all .4s ease-out 0s
 }
 
 p.copyright {
