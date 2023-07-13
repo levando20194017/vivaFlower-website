@@ -1,20 +1,14 @@
 
-/* start editing from here */
 a {
   text-decoration: none;
 }
 
-/* float left */
 .clear {
   clear: both;
 }
-
-/* horizontal menu */
 img {
   max-width: 100%;
 }
-
-/*--- end reset code ---*/
 
 .signUp {
   background: url(../../assets/images/banner.jpg) no-repeat;
@@ -98,7 +92,6 @@ input#password2 {
   font-size: 17px;
   font-weight: 200;
   background-color: transparent;
-  /*-- w3layouts --*/
   border-bottom: 5px solid #fff;
   border-top-color: transparent;
   border-left-color: transparent;
@@ -127,12 +120,10 @@ input::-webkit-input-placeholder {
 }
 
 input:-moz-placeholder {
-  /* Firefox 18- */
   color: #fff !important;
 }
 
 input::-moz-placeholder {
-  /* Firefox 19+ */
   color: #fff !important;
 }
 
@@ -146,12 +137,10 @@ input:hover::-webkit-input-placeholder {
 }
 
 input:hover:-moz-placeholder {
-  /* Firefox 18- */
   color: #3970b0 !important;
 }
 
 input:hover::-moz-placeholder {
-  /* Firefox 19+ */
   color: #3970b0 !important;
 }
 
@@ -172,7 +161,6 @@ input.register {
   background-color: #3970b0;
   border-color: transparent;
   font-family: 'Raleway', sans-serif;
-  /*-- w3ls --*/
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -183,7 +171,7 @@ input.register {
 
 input.register:hover {
   color: #fff;
-  background-color: #39b0a6;
+  background-color: #4CAF50;
   transition: all .4s ease-out 0s
 }
 
@@ -493,9 +481,3 @@ p.copyright a:hover {
     font-size: 13px;
   }
 }
-
-
-
-
-
-/*-- /responsive design --*/
