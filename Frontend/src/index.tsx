@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import Major from "./screens/NotFound/Major";
 import ProductDetail from "./screens/Product/ProductDetail";
+import SignupPage from "./screens/Signup";
 import LoginPage from "./screens/Login";
 import store from "./store";
 import { Provider } from "react-redux";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         element: <ProductDetail />,
       },
     ],
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />,
   },
   {
     path: "/login",
