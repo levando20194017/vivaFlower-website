@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import FontAwesomeIcon from ''
-import "./styles.css";
+import "./styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -40,68 +40,44 @@ export const LoginForm = ({ title, btnLabel }: Props) => {
 
   return (
     <>
-      {isLoading ? (
-        <Spinner animation="border" variant="primary" />
-      ) : (
-        <div className="login-form-container border border-primary">
-          <div className="login-form-header bg-primary">
-            <FontAwesomeIcon icon={faArrowRightFromBracket} size="2x" />
-            <h2>{title}</h2>
-          </div>
-          <div className="login-form-control">
-            <div className="d-flex flex-column justify-content-center">
-              <div className="row mb-3 d-flex align-items-center">
-                <label htmlFor="txtUsername" className="col-3 col-form-label">
-                  User name
-                </label>
-                <div className="col-9 p-0">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="txtUsername"
-                    id="txtUsername"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="row mb-3 d-flex align-items-center">
-                <label
-                  htmlFor="txtPassword"
-                  className="col-md-3 col-form-label"
-                >
-                  Password
-                </label>
-                <div className="col-md-9 p-0">
-                  <input
-                    type="password"
-                    className="form-control"
-                    name="txtPassword"
-                    id="txtPassword"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row d-flex align-items-center footer">
-              {isError ? (
-                <small className="error">
-                  Username or password is incorrect
-                </small>
-              ) : null}
-
-              <button
-                type="button"
-                className="btn btn-primary col-3 offset-3"
-                onClick={handleSubmit}
-              >
-                {btnLabel}
-              </button>
-            </div>
-          </div>
+      <h1 className="w3ls">Signup Form</h1>
+      <div className="content-w3ls">
+        <div className="content-agile1">
+          <h2 className="agileits1">Official</h2>
+          <p className="agileits2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-      )}
+        <div className="content-agile2">
+          <form action="#" method="post">
+            <div>
+              <input type="text" id="firstname" name="firstname" placeholder="Full Name" title="Please enter your Full Name" />
+            </div>
+            <div>
+              <input type="email" id="email" name="email" placeholder="mail@example.com"
+                title="Please enter a valid email" />
+            </div>
+
+            <div >
+              <input type="password" className="lock" name="password" placeholder="Password" id="password1"
+              />
+            </div>
+
+            <div>
+              <input type="password" className="lock" name="confirm-password" placeholder="Confirm Password"
+                id="password2" />
+            </div>
+
+            <input type="submit" className="register" value="Đăng ký" />
+          </form>
+          <p className="wthree w3l">Đăng ký nhanh với hồ sơ xã hội yêu thích của bạn.</p>
+          <ul className="social-agileinfo wthree2">
+            <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i className="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+        <div className="clear"></div>
+      </div>
     </>
   );
 };

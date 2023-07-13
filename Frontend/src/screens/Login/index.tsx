@@ -3,7 +3,7 @@ import './style.css'
 
 const LoginPage = () => {
   return (
-    <div className="login-page-container">
+    <div>
       <LoginForm title="Login" btnLabel="Sign In" />
     </div>
   );
