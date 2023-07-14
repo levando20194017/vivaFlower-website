@@ -1,0 +1,41 @@
+.headerContainer {
+  color: black;
+  .navbar{
+    border-bottom: 1px solid rgb(217, 212, 212);
+    -webkit-box-shadow: 0px 1px 6px 0px #c5c5c5;
+    height: 80px;
+  }
+
+  .header_content{
+    ul li{
+      display: inline-block;
+      padding: 12px 0px;
+      margin: 0 50px 0 0;
+      font-size: 20px;
+      font-weight: 500;
+      height: 100%;
+      &:hover{
+        background-color: #dc3545;
+        color: #fff
+      }
+    }
+  }
+}
+.header {
+  color: blue;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header.visible {
+  top: 0;
+  transition: top 0.5s linear; /* Hiệu ứng tuyến tính khi header xuất hiện */
+}
+
+.header.hidden {
+  top: -200px;
+  transition: top 1s ease-in-out; /* Hiệu ứng giãn nở khi header biến mất */
+}

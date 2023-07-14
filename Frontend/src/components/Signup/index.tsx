@@ -46,7 +46,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
 
      intervalId3 = setInterval(() => {
       setColorsContent(prev => (prev === "orange" ? "white" : "orange"))
-    }, 2000);
+    }, 500);
 
     return () => {
       // Xóa interval khi component bị unmount
