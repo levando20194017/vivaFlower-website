@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import FontAwesomeIcon from ''
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
-import Spinner from "react-bootstrap/Spinner";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string; // required
@@ -50,13 +48,13 @@ export const LoginForm = ({ title, btnLabel }: Props) => {
             <h1>Login Form</h1>
             <div className="main-agileits">
               <div className="form-w3-agile">
-                <h2><span style={{color: colors.a}}>Viva</span><span style={{color: colors.b, marginLeft: "15px"}}>flower</span></h2>
+                <h2><span style={{color: colors.a}}>Viva</span><span style={{color: colors.b, marginLeft: "15px"}}>Flower</span></h2>
                 <form action="#" method="post">
                   <div className="form-sub-w3">
                     <input
                       type="text"
                       name="Username"
-                      placeholder="Username "
+                      placeholder="Email"
                     />
                     <div className="icon-w3">
                       <i className="fa fa-user" aria-hidden="true"></i>
@@ -76,10 +74,12 @@ export const LoginForm = ({ title, btnLabel }: Props) => {
                     </div>
                   </div>
                   <p className="p-bottom-w3ls">
-                    Forgot Password?<a href="#"> Click here</a>
+                    Forgot Password?
+                    <Link to="/forgotpassword"> Click here</Link>
                   </p>
                   <p className="p-bottom-w3ls1">
-                    New User?<a href="#"> Register here</a>
+                    New User?
+                    <Link to="/signup"> Register here</Link>
                   </p>
                   <div className="clear"></div>
                   <div className="submit-w3l">
