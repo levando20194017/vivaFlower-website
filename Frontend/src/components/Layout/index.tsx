@@ -1,6 +1,7 @@
 import { Header } from "../Header";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Footer } from "../Footer";
 
 interface Post {
   id?: number;
@@ -83,6 +84,7 @@ export const Layout = () => {
         <br />
         <button onClick={onCreateNewPost}>Delete post</button>
       </section> */}
+      <Footer />
     </div>
   );
 };
