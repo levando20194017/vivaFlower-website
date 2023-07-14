@@ -10,6 +10,7 @@ import Major from "./screens/NotFound/Major";
 import ProductDetail from "./screens/Product/ProductDetail";
 import SignupPage from "./screens/Signup";
 import LoginPage from "./screens/Login";
+import ForgotPasswordPage from "./screens/ForgotPassword";
 import store from "./store";
 import { Provider } from "react-redux";
 import { Home } from "./screens/Home";
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/forgotpassword",
+    element: <ForgotPasswordPage />,
   },
 ]);
 

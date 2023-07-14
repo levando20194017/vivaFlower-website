@@ -83,7 +83,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
                 id="password2" />
             </div>
 
-            <input type="submit" className="register" value="Đăng ký" />
+            <input type="submit" className="register" value="SIGN UP" />
           </form>
           <p className="wthree w3l">Quick registration with your favorite social profiles.</p>
           <ul className="social-agileinfo wthree2">
