@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import FontAwesomeIcon from ''
-import "./styles.scss";
+import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -61,7 +61,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
       <div className="content-w3ls">
         <div className="content-agile1">
           <h2 className="agileits1"><span style={{color: colors.a}}>Viva</span><span style={{color: colors.b, marginLeft: "15px"}}>flower</span></h2>
-          <p className="agileits2 offset-1" style={{color: colorsContent}}>Chào mừng đến với Viva flower – nơi bạn có thể tìm thấy những bông hoa đẹp nhất và tươi nhất cho những dịp đặc biệt của mình.</p>
+          <p className="agileits2 offset-1" style={{color: colorsContent}}>Welcome to Viva Flower – Where You Can Find The Best And Freshest Flowers For Your Special Occasions.</p>
         </div>
         <div className="content-agile2">
           <form action="#" method="post">
@@ -85,7 +85,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
 
             <input type="submit" className="register" value="Đăng ký" />
           </form>
-          <p className="wthree w3l">Đăng ký nhanh với hồ sơ xã hội yêu thích của bạn.</p>
+          <p className="wthree w3l">Quick registration with your favorite social profiles.</p>
           <ul className="social-agileinfo wthree2">
             <li><a href="#"><i className="bi bi-facebook"></i></a></li>
             <li><a href="#"><i className="bi bi-google"></i></a></li>

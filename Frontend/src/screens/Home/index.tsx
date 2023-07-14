@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
-import { Prev } from "react-bootstrap/esm/PageItem"
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { getAllUsers, createNewUserService, deleteUserService, editUserService } from '../../services/userService';
 interface User {
   id?: number,
@@ -25,13 +24,6 @@ export const Home = () => {
     phoneNumber: "",
     gender: ""
   })
-
-  const updateUser = () => {
-
-  }
-  const deleteUser = () => {
-
-  }
   useEffect(() => {
     const fetchData = async () => {
       const response: AxiosResponse<ResponseData> = await getAllUsers('ALL');

@@ -11,6 +11,37 @@ interface Props {
 }
 
 export const LoginForm = ({ title, btnLabel }: Props) => {
+  const [colors, setColors] = useState({
+    a: '#ff652f',
+    b: 'white',
+  });
+  useEffect(() => {
+    let intervalId1: NodeJS.Timeout;
+    let intervalId2: NodeJS.Timeout;
+
+    // Thiết lập interval để mỗi 1000ms tăng currentIndex lên 1
+     intervalId1 = setInterval(() => {
+      setColors({
+        a: "#ff652f",
+        b: "white",
+      });
+    }, 2000);
+
+    setTimeout(() => {
+     intervalId2 = setInterval(() => {
+        setColors({
+          a: "white",
+          b: "#ff652f",
+        });
+      }, 2000);
+    }, 1000);
+
+    return () => {
+      // Xóa interval khi component bị unmount
+      clearInterval(intervalId1);
+      clearInterval(intervalId2);
+    }
+  }, []);
   return (
     <div className="login">
       <div className="container demo-1">
@@ -19,7 +50,7 @@ export const LoginForm = ({ title, btnLabel }: Props) => {
             <h1>Login Form</h1>
             <div className="main-agileits">
               <div className="form-w3-agile">
-                <h2>login Now</h2>
+                <h2><span style={{color: colors.a}}>Viva</span><span style={{color: colors.b, marginLeft: "15px"}}>flower</span></h2>
                 <form action="#" method="post">
                   <div className="form-sub-w3">
                     <input
@@ -61,18 +92,11 @@ export const LoginForm = ({ title, btnLabel }: Props) => {
                     <div className="clear"></div>
                   </div>
                   <div className="icons">
-                    <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-pinterest-p" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
+                  <ul className="social-agileinfo wthree2">
+                    <li><a href="#"><i className="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i className="bi bi-google"></i></a></li>
+                    <li><a href="#"><i className="bi bi-twitter"></i></a></li>
+                  </ul>
                     <div className="clear"></div>
                   </div>
                   <div className="clear"></div>
