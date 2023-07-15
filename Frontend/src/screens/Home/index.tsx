@@ -1,75 +1,43 @@
-import { useState, useEffect } from "react"
-import { AxiosResponse } from 'axios';
-import { getAllUsers, createNewUserService, deleteUserService, editUserService } from '../../services/userService';
-interface User {
-  id?: number,
-  fullName: string,
-  email: string,
-  address: string,
-  phoneNumber: string,
-  gender: string
-}
-interface ResponseData {
-  errCode: number;
-  message: string;
-  users: User[];
-}
-
+import "./style.scss";
+import { useSpring, animated } from '@react-spring/web'
+import React, { useState } from 'react'
 export const Home = () => {
-  const [users, setUsers] = useState<User[]>([])
-  const [user, setUser] = useState<User>({
-    fullName: "",
-    email: "",
-    address: "",
-    phoneNumber: "",
-    gender: ""
+  const [state, toggle] = useState(true)
+  const { x } = useSpring({
+    from: { x: 0 },
+    x: state ? 1 : 0,
+    config: { duration: 1000 },
   })
-  useEffect(() => {
-    const fetchData = async () => {
-      const response: AxiosResponse<ResponseData> = await getAllUsers('ALL');
-      console.log(response);
-
-      if (response && response.data.errCode === 0) {
-        setUsers(response.data.users);
-      }
-    };
-
-    fetchData();
-  }, [user]);
   return (
     <div>
-      <h2>Welcome to React 101!</h2>
-      {users.map((user) => {
-        return (
-          <div className="mt-5 modal-user" key={user.id}>
-            <div className="d-flex row">
-              <div className="col-2">UserId</div>
-              <div className="col-10">{user.id}</div>
-            </div>
-            <hr />
-            <div className="d-flex row">
-              <div className="col-2">Full Name</div>
-              <div className="col-10">{user.fullName}</div>
-            </div>
-            <hr />
-            <div className="d-flex row">
-              <div className="col-2">Address</div>
-              <div className="col-10">{user.address}</div>
-            </div>
-            <hr />
-            <div className="d-flex row">
-              <div className="col-2">Email</div>
-              <div className="col-10">{user.email}</div>
-            </div>
-            <hr />
-            <div className="d-flex row">
-              <div className="col-2">Phone</div>
-              <div className="col-10">{user.phoneNumber}</div>
-            </div>
-            <hr />
+      <div className="nav_home">
+        <div className="brand_intro1">
+          <div>
+            <h1>VIVA FLOWER - THE PLACE TO SUPPLY WAX FLOWERS</h1>
           </div>
-        )
-      })}
+        </div>
+        <div className="brand_intro2 mt-4">
+          <div style={{ fontSize: "20px" }}>
+            Explore our colorful and unique floral products.
+          </div>
+        </div>
+        <div className="nav_home-button mt-4">
+          <div className="container" onClick={() => toggle(!state)}>
+            <animated.div
+              className="text"
+              style={{
+                scale: x.to({
+                  range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                  output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                }),
+              }}>
+              <button className="contact_me">CONTACT ME</button>
+            </animated.div>
+          </div>
+
+        </div>
+      </div>
+      <div style={{ height: "2500px" }}>hello</div>
     </div>
   )
 }

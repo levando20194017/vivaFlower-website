@@ -1,4 +1,3 @@
-
 a {
   text-decoration: none;
 }
@@ -6,6 +5,7 @@ a {
 .clear {
   clear: both;
 }
+
 img {
   max-width: 100%;
 }
@@ -30,14 +30,14 @@ img {
     /*-- w3layouts --*/
     text-transform: uppercase;
   }
-  
+
   .content-w3ls {
     background-color: #202123;
     width: 70%;
     margin: 0 auto 50px;
     padding: 0;
   }
-  
+
   .content-w3ls .content-agile1 {
     width: 50%;
     float: left;
@@ -49,22 +49,45 @@ img {
     -o-background-size: cover;
     -ms-background-size: cover;
     height: 555px;
+
+    .brand {
+      padding: 150px 0 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border: 1px solid white;
+        animation: rotation 3s linear infinite;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotateY(0deg);
+        }
+
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+    }
   }
-  
+
   h2.agileits1 {
     font-size: 40px;
     font-weight: normal;
     color: #fff;
     text-align: Center;
-    padding: 200px 0 15px;
+    padding: 0px 0 15px;
     text-transform: uppercase;
-    font-family: 'Monoton', cursive;
+    font-family: 'Tektur', cursive;
     text-shadow: 1px 1px;
   }
-  h2.agileits1 span{
+
+  h2.agileits1 span {
     transition: all .4s ease-out 0s
   }
-  
+
   p.agileits2 {
     font-size: 15px;
     font-weight: 500;
@@ -74,13 +97,13 @@ img {
     width: 80%;
     transition: all .4s ease-out 0s
   }
-  
+
   .content-w3ls .content-agile2 {
     width: 50%;
     float: left;
     padding: 25px 0 0;
   }
-  
+
   input#firstname,
   input#email,
   input#password1,
@@ -101,7 +124,7 @@ img {
     display: block;
     outline: none;
   }
-  
+
   input#firstname:focus,
   input#email:focus,
   input#password1:focus,
@@ -114,40 +137,40 @@ img {
     border-bottom: 5px solid #3970b0;
     transition: all .4s ease-out 0s
   }
-  
+
   input::-webkit-input-placeholder {
     color: #fff !important;
   }
-  
+
   input:-moz-placeholder {
     color: #fff !important;
   }
-  
+
   input::-moz-placeholder {
     color: #fff !important;
   }
-  
+
   input:-ms-input-placeholder {
     color: #fff !important;
   }
-  
+
   input:hover::-webkit-input-placeholder {
     color: #3970b0 !important;
     transition: all .4s ease-out 0s
   }
-  
+
   input:hover:-moz-placeholder {
     color: #3970b0 !important;
   }
-  
+
   input:hover::-moz-placeholder {
     color: #3970b0 !important;
   }
-  
+
   input:hover:-ms-input-placeholder {
     color: #3970b0 !important;
   }
-  
+
   input.register {
     border-radius: 5px;
     width: 335px;
@@ -168,13 +191,13 @@ img {
     -ms-transition: all 0.5s ease-in-out;
     cursor: pointer;
   }
-  
+
   input.register:hover {
     color: #fff;
     background-color: #4CAF50;
     transition: all .4s ease-out 0s
   }
-  
+
   p.wthree {
     font-size: 16px;
     font-weight: normal;
@@ -182,16 +205,16 @@ img {
     text-align: center;
     padding-bottom: 20px;
   }
-  
+
   ul.social-agileinfo {
     text-align: center;
   }
-  
+
   ul.social-agileinfo li {
     display: inline-block;
     margin: 0;
   }
-  
+
   ul.social-agileinfo li a i.bi {
     width: 40px;
     height: 40px;
@@ -202,77 +225,81 @@ img {
     padding: 5px;
     border: 1px solid #fff
   }
-  ul.social-agileinfo li a i.bi.bi-facebook{
-  background-color: rgb(0, 81, 255);
-  margin-left: -15px;
+
+  ul.social-agileinfo li a i.bi.bi-facebook {
+    background-color: rgb(0, 81, 255);
+    margin-left: -15px;
   }
-  ul.social-agileinfo li a i.bi.bi-twitter{
+
+  ul.social-agileinfo li a i.bi.bi-twitter {
     background-color: rgb(21, 128, 223);
     margin-left: 5px;
-    }
-    ul.social-agileinfo li a i.bi.bi-google{
-      background-color: #cd410e;
-      margin-left: 5px;
-    }
+  }
+
+  ul.social-agileinfo li a i.bi.bi-google {
+    background-color: #cd410e;
+    margin-left: 5px;
+  }
+
   ul.social-agileinfo li a i.bi.bi-facebook:hover {
     background-color: #3b5998;
     color: #fff;
     border-color: #3b5998;
     transition: all .4s ease-out 0s
   }
-  
+
   ul.social-agileinfo li a i.bi.bi-twitter:hover {
     background-color: #1da1f2;
     color: #fff;
     border-color: #1da1f2;
     transition: all .4s ease-out 0s
   }
-  
+
   ul.social-agileinfo li a i.bi.bi-google:hover {
     background-color: #cd201f;
     color: #fff;
     border-color: #cd201f;
     transition: all .4s ease-out 0s
   }
-  
-  
+
+
   /*-- responsive design --*/
   @media (max-width:1600px) {
     h2.agileits1 {
       padding: 225px 0 15px;
     }
   }
-  
+
   @media (max-width: 1366px) {
     h2.agileits1 {
       padding: 235px 0 15px;
     }
   }
-  
+
   @media (max-width: 1080px) {
-  
+
     /*-- agileits --*/
     h1.w3ls {
       font-size: 40px;
     }
-  
+
     .content-w3ls {
       width: 80%;
       margin: 0 auto 40px;
     }
-  
+
     p.agileits2 {
       font-size: 14px;
     }
-  
+
     p.copyright {
       font-size: 14px;
     }
-  
+
     p.wthree {
       font-size: 14px;
     }
-  
+
     input#firstname,
     input#email,
     input#password1,
@@ -280,105 +307,105 @@ img {
       font-size: 15px;
     }
   }
-  
+
   @media (max-width: 1024px) {
     h1.w3ls {
       padding: 30px 0;
       font-size: 35px;
     }
   }
-  
+
   @media (max-width: 991px) {
     h2.agileits1 {
       padding: 230px 0 15px;
     }
-  
+
     .content-w3ls {
       width: 90%;
     }
   }
-  
+
   @media (max-width: 800px) {
-  
+
     input#firstname,
     input#email,
     input#password1,
     input#password2 {
       width: 260px;
     }
-  
+
     input.register {
       width: 295px;
     }
-  
+
     p.agileits2 {
       font-size: 14px;
       line-height: 30px;
       padding: 0 10px;
     }
-  
+
     /*-- agileits --*/
   }
-  
+
   @media (max-width: 768px) {
     h2.agileits1 {
       padding: 210px 0 15px;
     }
   }
-  
+
   @media (max-width: 736px) {
     .content-w3ls .content-agile1 {
       width: 100%;
       height: 250px;
     }
-  
+
     h2.agileits1 {
       padding: 75px 0 15px;
     }
-  
+
     .content-w3ls .content-agile2 {
       width: 100%;
       padding: 25px 0 30px;
     }
-  
+
     .content-w3ls {
       width: 65%;
     }
   }
-  
+
   @media (max-width: 600px) {
     h2.agileits1 {
       padding: 65px 0 10px;
     }
   }
-  
+
   @media (max-width: 568px) {
     .content-w3ls {
       width: 70%;
     }
   }
-  
+
   @media (max-width: 480px) {
     h2.agileits1 {
       font-size: 35px;
     }
   }
-  
+
   @media (max-width: 414px) {
     h1.w3ls {
       padding: 25px 0;
       font-size: 30px;
     }
-  
+
     .content-w3ls {
       /*-- agileinfo --*/
       width: 85%;
       margin: 0 auto 10px;
     }
   }
-  
+
   @media (max-width: 384px) {
-  
+
     input#firstname,
     input#email,
     input#password1,
@@ -386,57 +413,57 @@ img {
       width: 230px;
       height: 40px;
     }
-  
+
     input.register {
       width: 260px;
       height: 45px;
     }
-  
+
     p.wthree {
       font-size: 14px;
       padding: 0 15px 20px;
       line-height: 30px;
     }
   }
-  
+
   @media (max-width: 375px) {
     h1.w3ls {
       padding: 25px 0;
       font-size: 27px;
     }
-  
+
     h2.agileits1 {
       font-size: 25px;
       padding: 43px 0 10px;
     }
-  
+
     .content-w3ls .content-agile1 {
       width: 100%;
       height: 200px;
     }
   }
-  
+
   @media (max-width: 320px) {
     h1.w3ls {
       padding: 25px 0;
       font-size: 24px;
     }
-  
+
     .content-w3ls .content-agile1 {
       width: 100%;
       height: 180px;
     }
-  
+
     h2.agileits1 {
       font-size: 22px;
       padding: 37px 0 10px;
     }
-  
+
     /*-- agileinfo --*/
     p.agileits2 {
       font-size: 13px;
     }
-  
+
     input#firstname,
     input#email,
     input#password1,
@@ -445,27 +472,26 @@ img {
       height: 40px;
       font-size: 14px;
     }
-  
+
     .content-w3ls {
       width: 90%;
       margin: 0 auto;
     }
-  
+
     input.register {
       width: 230px;
       height: 40px;
       font-size: 15px;
     }
-  
+
     p.wthree {
       font-size: 13px;
       padding: 0 15px 15px;
     }
-  
+
     p.copyright {
       font-size: 13px;
     }
   }
-  
-}
 
+}
