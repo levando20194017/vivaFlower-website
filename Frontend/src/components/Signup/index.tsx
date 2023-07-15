@@ -4,7 +4,7 @@ import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import logo4 from "../../assets/images/logo4.png"
 interface Props {
   title: string; // required
   btnLabel: string; // optional
@@ -28,7 +28,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
     let intervalId3: NodeJS.Timeout;
 
     // Thiết lập interval để mỗi 1000ms tăng currentIndex lên 1
-     intervalId1 = setInterval(() => {
+    intervalId1 = setInterval(() => {
       setColors({
         a: "#ff652f",
         b: "white",
@@ -36,7 +36,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
     }, 2000);
 
     setTimeout(() => {
-     intervalId2 = setInterval(() => {
+      intervalId2 = setInterval(() => {
         setColors({
           a: "white",
           b: "#ff652f",
@@ -44,7 +44,7 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
       }, 2000);
     }, 1000);
 
-     intervalId3 = setInterval(() => {
+    intervalId3 = setInterval(() => {
       setColorsContent(prev => (prev === "orange" ? "white" : "orange"))
     }, 500);
 
@@ -60,8 +60,9 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
       <h1 className="w3ls">Signup Form</h1>
       <div className="content-w3ls">
         <div className="content-agile1">
-          <h2 className="agileits1"><span style={{color: colors.a}}>Viva</span><span style={{color: colors.b, marginLeft: "15px"}}>flower</span></h2>
-          <p className="agileits2 offset-1" style={{color: colorsContent}}>Welcome to Viva Flower – Where You Can Find The Best And Freshest Flowers For Your Special Occasions.</p>
+          <div className="brand"><img className="headerUser-right-avt rounded-circle" src={logo4} alt='avatar' width={85} height={80} /></div>
+          <h2 className="agileits1 mt-2"><span style={{ color: colors.a }}>Viva</span><span style={{ color: colors.b, marginLeft: "15px" }}>flower</span></h2>
+          <p className="agileits2 offset-1" style={{ color: colorsContent }}>Welcome to Viva Flower – Where You Can Find The Best And Freshest Flowers For Your Special Occasions.</p>
         </div>
         <div className="content-agile2">
           <form action="#" method="post">
@@ -94,6 +95,6 @@ export const SignupForm = ({ title, btnLabel }: Props) => {
         </div>
         <div className="clear"></div>
       </div>
-      </div>
+    </div>
   );
 };
