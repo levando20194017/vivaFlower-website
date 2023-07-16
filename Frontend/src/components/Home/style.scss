@@ -1,0 +1,287 @@
+.home-banner {
+    background-image: url('../../assets/images/banner2.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    height: 80vh;
+    position: relative;
+
+    @mixin brandIntroduce($top) {
+        position: absolute;
+        bottom: 0;
+        top: $top;
+        transform: translateY(18px);
+        color: white;
+        opacity: 0;
+        width: 95vw;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand_intro1 {
+        @include brandIntroduce(-10%);
+        transition: transform 0.8s ease, opacity 0.8s ease;
+        animation: slide-up 1s ease forwards;
+
+    }
+
+    .brand_intro2 {
+        @include brandIntroduce(2%);
+        transition: transform 1s ease, opacity 0.8s ease;
+        animation: slide-up 0.8s ease 0.5s forwards;
+
+    }
+
+    .home-banner_button {
+        @include brandIntroduce(20%);
+        transition: transform 1s ease, opacity 0.8s ease;
+        animation: slide-up 0.8s ease 1s forwards;
+
+        .text {
+            font-weight: 600;
+            will-change: opacity;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .contact-button {
+            width: 150px;
+            color: #fff;
+            background-color: blue;
+            border-radius: 20px;
+            border: 2px solid #fff;
+            height: 40px;
+            font-weight: 500;
+
+            &:hover {
+                background-color: #ff652f;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        .contact-button.animating {
+            animation: scale 1s ease-in-out;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(18px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(-50px);
+            opacity: 1;
+        }
+    }
+}
+
+//Home content
+.home-content {
+    .product-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Tektur', cursive;
+        letter-spacing: 1px;
+        font-size: 90px;
+        color: #ff652f;
+
+        @keyframes wave {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-10px);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.product-title span:nth-child(1) {
+    animation: wave 1s ease-in-out infinite;
+}
+
+.product-title span:nth-child(2) {
+    animation: wave 1s ease-in-out 0.1s infinite;
+}
+
+.product-title span:nth-child(3) {
+    animation: wave 1s ease-in-out 0.2s infinite;
+}
+
+.product-title span:nth-child(4) {
+    animation: wave 1s ease-in-out 0.3s infinite;
+}
+
+.product-title span:nth-child(5) {
+    animation: wave 1s ease-in-out 0.4s infinite;
+}
+
+.product-title span:nth-child(6) {
+    animation: wave 1s ease-in-out 0.5s infinite;
+}
+
+.product-title span:nth-child(7) {
+    animation: wave 1s ease-in-out 0.6s infinite;
+}
+
+.wrapper {
+    position: relative;
+    margin-top: -500px;
+}
+
+.product-info {
+    position: absolute;
+    background-color: #fff;
+    height: 300px;
+    width: 700px;
+    z-index: 1;
+    left: 20%;
+    margin-top: 10%;
+    border: 10px solid rgb(225, 223, 223);
+
+    .product-title {
+        h2 {
+            text-shadow: -1px 0 rgb(195, 191, 191), 0 2px rgb(195, 191, 191), 2px 0 rgb(195, 191, 191), 0 -1px rgb(195, 191, 191);
+        }
+    }
+
+    .product-detail {
+        h4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        i {
+            padding-left: 3px;
+            color: orange;
+        }
+
+        .button-add {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+
+            button {
+                width: 220px;
+                height: 40px;
+                background-color: #ff652f;
+                color: #fff;
+                font-weight: bold;
+                border: 2px solid rgb(205, 199, 199);
+
+                &:hover {
+                    animation: scale 1s ease-in-out;
+                }
+
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.product-img {
+    border: 10px solid gray;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 2;
+}
+
+.hihi {
+    background: lightblue;
+    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
+        auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.deck {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: none;
+}
+
+.deck>div {
+    background-color: white;
+    background-size: auto 85%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 45vh;
+    max-width: 150px;
+    height: 85vh;
+    max-height: 285px;
+    will-change: transform;
+    border-radius: 10px;
+    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+}
+
+
+.discount {
+    background-image: url('../../assets/images/discount.png');
+    background-size: cover;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 10%;
+    right: 10%;
+
+    >span {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+}
+
+.discount.animating {
+    animation: scale 1s ease-in-out;
+}
