@@ -201,7 +201,9 @@
                 background-color: #ff652f;
                 color: #fff;
                 font-weight: bold;
-                border: 2px solid rgb(205, 199, 199);
+                border: none;
+                box-shadow: 0px 0px 19px 0px #aaa6a6;
+                ;
 
                 &:hover {
                     animation: scale 1s ease-in-out;
@@ -225,7 +227,7 @@
     z-index: 2;
 }
 
-.hihi {
+.list-img {
     background: lightblue;
     cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
         auto;
@@ -284,4 +286,58 @@
 
 .discount.animating {
     animation: scale 1s ease-in-out;
+}
+
+.list-product {
+    .list-service {
+        .icon-service {
+            transition: all 0.3s ease;
+            color: #888888;
+            position: relative;
+
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-8px);
+                transition: all 0.5s ease;
+                color: black;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 4px;
+                background-color: black;
+                transition: width 0.4s ease-in-out;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+        }
+
+        p {
+            line-height: 3px;
+            margin-left: 10px;
+        }
+
+        .ab {
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            color: #888888;
+        }
+
+        .service-name {
+            letter-spacing: 0.5px;
+            text-transform: capitalize;
+            font-size: 17px;
+            font-weight: 500;
+            color: #000000;
+            line-height: 24px;
+        }
+    }
 }

@@ -37,7 +37,7 @@ const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 const trans = (r: number, s: number) =>
     `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-export const HomeContent = () => {
+export const HomeContentDiscount = () => {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
@@ -104,7 +104,7 @@ export const HomeContent = () => {
                                     <div className="carousel-caption text-start">
                                         <div className="wrapper">
                                             <div className="product-img" data-aos="zoom-in">
-                                                <div className="hihi">
+                                                <div className="list-img">
                                                     {props.map(({ x, y, rot, scale }, i) => (
                                                         <animated.div className="deck" key={i} style={{ x, y }}>
                                                             {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
@@ -169,7 +169,7 @@ export const HomeContent = () => {
                                     <div className="carousel-caption text-start">
                                         <div className="wrapper">
                                             <div className="product-img" data-aos="zoom-in">
-                                                <div className="hihi">
+                                                <div className="list-img">
                                                     {props.map(({ x, y, rot, scale }, i) => (
                                                         <animated.div className="deck" key={i} style={{ x, y }}>
                                                             {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
@@ -234,7 +234,7 @@ export const HomeContent = () => {
                                     <div className="carousel-caption text-start">
                                         <div className="wrapper">
                                             <div className="product-img" data-aos="zoom-in">
-                                                <div className="hihi">
+                                                <div className="list-img">
                                                     {props.map(({ x, y, rot, scale }, i) => (
                                                         <animated.div className="deck" key={i} style={{ x, y }}>
                                                             {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
