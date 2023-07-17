@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import logo4 from "../../assets/images/logo4.png"
 export const Header = () => {
   const [visible, setVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
@@ -45,20 +45,17 @@ export const Header = () => {
             <ul>
               <li
                 className={activeIndex === 0 ? "active" : ""}
-                onClick={() => handleClick(0)}
-              >
+                onClick={() => handleClick(0)}>
                 HOME
               </li>
               <li
                 className={activeIndex === 1 ? "active" : ""}
-                onClick={() => handleClick(1)}
-              >
+                onClick={() => handleClick(1)}>
                 CONTACT
               </li>
               <li
                 className={activeIndex === 2 ? "active" : ""}
-                onClick={() => handleClick(2)}
-              >
+                onClick={() => handleClick(2)}>
                 ABOUT ME
               </li>
             </ul>
@@ -80,20 +77,17 @@ export const Header = () => {
             <ul>
               <li
                 className={activeIndex === 0 ? "active" : ""}
-                onClick={() => handleClick(0)}
-              >
+                onClick={() => handleClick(0)}>
                 HOME
               </li>
               <li
                 className={activeIndex === 1 ? "active" : ""}
-                onClick={() => handleClick(1)}
-              >
+                onClick={() => handleClick(1)}>
                 CONTACT
               </li>
               <li
                 className={activeIndex === 2 ? "active" : ""}
-                onClick={() => handleClick(2)}
-              >
+                onClick={() => handleClick(2)}>
                 ABOUT ME
               </li>
             </ul>
