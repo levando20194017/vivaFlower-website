@@ -11,7 +11,8 @@ import img1 from '../../../assets/images/content.jpg';
 import img2 from '../../../assets/images/banner2.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { ModalQuickView } from "../ModalQuickView";
 AOS.init({
     offset: 200,
     duration: 400,
@@ -21,13 +22,26 @@ AOS.init({
 export const ListProduct = () => {
     const [visible, setVisible] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
-  
+    const [isOpenModal, setIsOpenModal] = useState(false);
+
+    const handleQuickView = () => {
+        setIsOpenModal(true);
+        console.log(2);
+        
+    }
+    const toggleModal = () => {
+        setIsOpenModal(!isOpenModal);
+    }
     const handleClick = (index: number) => {
       setActiveIndex(index);
     };
 
     return (
         <div className="container list-product mt-5">
+             <ModalQuickView
+                            isOpen={isOpenModal}
+                            toggleFromParent={toggleModal}
+                        />
             <div className="hstack gap-2 gap-xl-5 justify-content-center mt-3 list-service">
                 <div className="d-flex">
                     <div className="icon-service"><Icon path={mdiTruckDelivery} size={2} /></div>
@@ -189,7 +203,7 @@ export const ListProduct = () => {
                                                         <img src={img1} alt="" />
                                                     </div>
                                                     <div className="item-actions">
-                                                        <div className="quick-view"><i className="bi bi-eye-fill"></i></div>
+                                                        <div className="quick-view" onClick={handleQuickView}><i className="bi bi-eye-fill"></i></div>
                                                         <div className="add-to-cart"><i className="bi bi-cart4"></i></div>
                                                     </div>
                                                 </div>

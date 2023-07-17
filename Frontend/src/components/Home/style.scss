@@ -18,6 +18,21 @@
         align-items: center;
         text-align: center;
     }
+    @mixin button($fontweight){
+        background-color: #ff652f;
+        color: #fff;
+        font-weight: $fontweight;
+        border: none;
+        box-shadow: 0px 0px 19px 0px #aaa6a6;
+
+        &:hover {
+            animation: scale 1s ease-in-out;
+        }
+
+        i {
+            color: #fff;
+        }
+    }
 
     .brand_intro1 {
         @include brandIntroduce(-10%);
@@ -203,7 +218,6 @@
                 font-weight: bold;
                 border: none;
                 box-shadow: 0px 0px 19px 0px #aaa6a6;
-                ;
 
                 &:hover {
                     animation: scale 1s ease-in-out;
@@ -527,3 +541,47 @@
   .single-location:hover .location-img img {
     transform: scale(1.15)
   }
+.modal-quick-view{
+    img{
+        background-size: auto;
+        background-position: center;
+    }
+    .item-detail{
+        padding: 10px 10px 25px 10px;
+        h6{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        i{
+            color: orange;
+            padding-left: 3px;
+        }
+        >div{
+            line-height: 30px;
+            font-weight: 400;
+        }
+        .quantity{
+           width: 90px;
+           span{
+            margin-right: 5px;
+            font-weight: bold;
+           }
+        }
+        button{
+            font-weight: 500;
+            background-color: #ff652f;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0px 0px 19px 0px #aaa6a6;
+            height: 100%;
+            &:hover {
+                animation: scale 1s ease-in-out;
+            }
+
+            i {
+                color: #fff;
+            }
+        }
+    }
+}
