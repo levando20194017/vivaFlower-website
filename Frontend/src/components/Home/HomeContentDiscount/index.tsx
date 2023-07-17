@@ -162,7 +162,7 @@ export const HomeContentDiscount = () => {
 
                                     </div>
                                 </div>
-                                <img style={{ borderRadius: "10px", height: "600px", width: "100vw" }} src={item1} />
+                                <img style={{ borderRadius: "10px", height: "600px", width: "100vw" }} src={item2} />
                             </div>
                             <div className="carousel-item">
                                 <div className='d-flex'>
