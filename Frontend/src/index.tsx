@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Product from "./screens/Product";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import Major from "./screens/NotFound/Major";
+import Product from "./screens/Product";
 import ProductDetail from "./screens/Product/ProductDetail";
 import SignupPage from "./screens/Signup";
 import LoginPage from "./screens/Login";
@@ -14,8 +13,8 @@ import ForgotPasswordPage from "./screens/ForgotPassword";
 import store from "./store";
 import { Provider } from "react-redux";
 import { HomePage } from "./screens/Home";
-//nested route
-
+import AddToCartPage from "./screens/AddToCart";
+import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,25 +22,13 @@ const router = createBrowserRouter([
     errorElement: <p>Not found</p>,
     children: [
       {
-        path: "/major",
-        element: <Major />,
-      },
-      {
-        path: "/student",
-        element: <h1>Student Page</h1>,
-      },
-      {
         path: "/home",
         element: <HomePage />,
       },
       {
-        path: "/product",
-        element: <Product />,
-      },
-      {
-        path: "/product/:id",
-        element: <ProductDetail />,
-      },
+        path: "/addtocart",
+        element: <AddToCartPage />,
+      }
     ],
   },
   {

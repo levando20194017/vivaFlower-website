@@ -24,12 +24,12 @@ export const ModalQuickView = (props:any) => {
             <h6 className="d-flex justify-content-center">Viva flower</h6>
             <hr/>
             <div> <b>4.9</b>
-                                                                <i className="bi bi-star-fill"></i>
-                                                                <i className="bi bi-star-fill"></i>
-                                                                <i className="bi bi-star-fill"></i>
-                                                                <i className="bi bi-star-fill"></i>
-                                                                <i className="bi bi-star-fill"></i>
-                                                    </div>
+               <i className="bi bi-star-fill"></i>
+              <i className="bi bi-star-fill"></i>
+              <i className="bi bi-star-fill"></i>
+            <i className="bi bi-star-fill"></i>
+             <i className="bi bi-star-fill"></i>
+            </div>
             <div><b>Category:</b> Viva flower</div>
             <div><b>The remaining amount:</b> 225</div>
             <div><b>Description:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis dolores laudantium magnam rerum quae illo vel incidunt impedit blanditiis. Facilis distinctio fugiat ipsum soluta assumenda velit repellendus tempore molestiae cupiditate.</div>
