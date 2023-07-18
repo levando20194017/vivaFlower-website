@@ -1,8 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import { useEffect, useState } from "react";
@@ -43,11 +39,13 @@ export const Header = () => {
           </div>
           <div className="header_content col-8">
             <ul>
+              <Link to='/home' >
               <li
                 className={activeIndex === 0 ? "active" : ""}
                 onClick={() => handleClick(0)}>
                 HOME
               </li>
+              </Link>
               <li
                 className={activeIndex === 1 ? "active" : ""}
                 onClick={() => handleClick(1)}>

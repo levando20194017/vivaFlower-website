@@ -1,12 +1,12 @@
 import { HomeBanner } from "../../components/Home/HomeBanner";
 import { HomeContentDiscount } from "../../components/Home/HomeContentDiscount";
-import { ListProduct } from "../../components/Home/ListProduct";
+import { ProductCatgories } from "../../components/Home/ProductCatgories";
 export const HomePage = () => {
   return (
     <div>
       <HomeBanner />
       <HomeContentDiscount />
-      <ListProduct />
+      <ProductCatgories />
     </div>
   )
 }

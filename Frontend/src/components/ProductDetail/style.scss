@@ -1,0 +1,59 @@
+.pro-form{
+    .pro-header{
+        position: relative;
+        text-align: center;
+        background-color: #e6e6e6;
+        display: flex;
+        height: 85px;
+        justify-content: center;
+        align-items: center;
+        .vr{
+            margin-top: 35px;
+            height: 21px;
+        }
+    }
+    .pro-body{
+        .images-of-pro {
+            --image-index: 0;
+            --images: "[]";
+          
+            .img-show {
+              /* Khai báo CSS cho phần hiển thị ảnh lớn */
+            }
+          
+            .list-img-of-pro {
+              ul {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: hidden;
+                padding: 0;
+                margin: 0;
+              }
+          
+              li {
+                display: inline-block;
+                padding: 10px 10px;
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+          
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.5;
+                }
+              }
+          
+              i {
+                cursor: pointer;
+                display: inline-block;
+                font-size: 30px
+              }
+              >div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+          
+            }
+          }
+    }
+}
