@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     errorElement: <p>Not found</p>,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <HomePage />,
       },
       {
