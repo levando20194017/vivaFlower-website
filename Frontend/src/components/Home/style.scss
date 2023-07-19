@@ -370,28 +370,7 @@
             text-transform: capitalize !important;
             letter-spacing: 0.2px;
         }
-        .top-categories_list{
-            padding: 20px 20px;
-            background: #e6e6e6;
-            width: 100%;
-            img {
-                height: 350px;
-                width: 300px;
-              }
-            .top-categories_item{
-                height: auto;
-                padding: 20px;
-                background-color: #fff;
-                border: 5px solid #e6e6e6;
-                &_detail{
-                    font-weight: 600;
-                    i{
-                        padding-left: 3px;
-                        color: orange
-                    }
-                }
-            }
-        }
+        
         .categories-list{
             padding: 0 40px;
             margin-bottom: 30px;
@@ -426,8 +405,29 @@
         }
     }
 }
-
-.popular-location .single-location{
+.top-categories_list{
+    padding: 20px 20px;
+    background: #e6e6e6;
+    width: 100%;
+    img {
+        height: 350px;
+        width: 300px;
+      }
+    .top-categories_item{
+        height: auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 5px solid #e6e6e6;
+        &_detail{
+            font-weight: 600;
+            i{
+                padding-left: 3px;
+                color: orange
+            }
+        }
+    }
+}
+.single-location{
     position: relative;
     .item-actions{
         position: absolute;
@@ -504,14 +504,14 @@
 .single-location:hover .add-to-cart {
     animation: cartIcon 1s forwards;
 }
-  .popular-location .single-location .location-img {
+  .single-location .location-img {
     border-radius: 15px;
     overflow: hidden;
     position: relative;
     z-index: 0;
   }
   
-  .popular-location .single-location .location-img::before {
+  .single-location .location-img::before {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -528,7 +528,7 @@
     transition: all .4s ease-out 0s
   }
   
-  .popular-location .single-location .location-img img {
+  .single-location .location-img img {
     width: 100%;
     transform: scale(1);
     -webkit-transition: all .4s ease-out 0s;

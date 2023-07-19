@@ -1,0 +1,14 @@
+.des-and-reviews {
+  ul {
+    li {
+      padding: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: gray;
+    }
+    li.active {
+      color: black;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}

@@ -24,7 +24,6 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <div className="headerContainer">
       <Navbar className="header1 bg-dark justify-content-end">
@@ -39,7 +38,7 @@ export const Header = () => {
           </div>
           <div className="header_content col-8">
             <ul>
-              <Link to='/home' >
+              <Link to='/' >
               <li
                 className={activeIndex === 0 ? "active" : ""}
                 onClick={() => handleClick(0)}>
@@ -73,11 +72,13 @@ export const Header = () => {
           </div>
           <div className="header_content col-8">
             <ul>
+            <Link to='/' >
               <li
                 className={activeIndex === 0 ? "active" : ""}
                 onClick={() => handleClick(0)}>
                 HOME
               </li>
+              </Link>
               <li
                 className={activeIndex === 1 ? "active" : ""}
                 onClick={() => handleClick(1)}>

@@ -8,5 +8,5 @@ body {
 }
 .div-empty{
   height: 80px;
-  background: rgba(29, 27, 27, 0.87);
+  background: rgba(29, 27, 27, 0.87) !important;
 }
