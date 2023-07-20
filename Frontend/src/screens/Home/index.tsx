@@ -8,5 +8,5 @@ export const HomePage = () => {
       <HomeContentDiscount />
       <ProductCatgories />
     </div>
-  )
-}
+  );
+};
