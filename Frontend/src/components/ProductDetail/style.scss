@@ -87,20 +87,25 @@
         line-height: 46px;
       }
       .quantity {
-        width: 150px;
+        width: 130px;
+        height: 35px;
         span {
-          margin-right: 5px;
+          margin-right: 7px;
           font-weight: bold;
         }
       }
       button {
+        height: 35px;
         font-weight: 500;
         background-color: #ff652f;
         color: #fff;
         font-weight: bold;
         border: none;
         box-shadow: 0px 0px 19px 0px #aaa6a6;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // height: 100%;
         &:hover {
           animation: scale 1s ease-in-out;
         }

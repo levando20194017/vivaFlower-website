@@ -14,7 +14,8 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { HomePage } from "./screens/Home";
 import AddToCartPage from "./screens/AddToCart";
-import './index.css'
+import "./index.css";
+import { OrderStatus } from "./components/OrderStatus";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       {
         path: "/addtocart",
         element: <AddToCartPage />,
-      }
+      },
+      {
+        path: "/orderstatus",
+        element: <OrderStatus />,
+      },
     ],
   },
   {

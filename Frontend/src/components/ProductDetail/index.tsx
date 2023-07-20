@@ -65,7 +65,7 @@ export const ProductDetail = () => {
         <div className="vr"></div>
         <div className="text-secondary">VIVA FLOWER</div>
       </div>
-      <div className="pro-body mt-4 container">
+      <div className="pro-body mt-5 container">
         <div className="d-flex">
           <div className="col-5 images-of-pro">
             <div className="img-show">
@@ -133,11 +133,19 @@ export const ProductDetail = () => {
               <span style={{ color: "gray" }}>In stock</span>
             </div>
             <div className="d-flex">
-              <b>Color: </b>
+              <b>
+                <span style={{ color: "red" }}>*</span>
+                <span style={{ marginLeft: "3px" }}>Color:</span>{" "}
+              </b>
               <select
                 className="form-select"
                 aria-label="Default select example"
-                style={{ width: "200px", marginLeft: "10px", color: "gray" }}
+                style={{
+                  width: "200px",
+                  marginLeft: "10px",
+                  color: "gray",
+                  height: "35px",
+                }}
               >
                 <option selected>--Select color--</option>
                 <option value="1">Blue</option>
@@ -155,7 +163,10 @@ export const ProductDetail = () => {
               shipping fees <b style={{ color: "black" }}>5.000đ</b> for{" "}
               <b style={{ color: "black" }}>1 km</b>.
             </div>
-            <div className="mt-4 d-flex justify-content-between col-7">
+            <div
+              className="d-flex justify-content-between col-7"
+              style={{ marginTop: "20px" }}
+            >
               <div className="d-flex quantity">
                 <span>Quantity</span>
                 <input type="number" className="form-control" />
