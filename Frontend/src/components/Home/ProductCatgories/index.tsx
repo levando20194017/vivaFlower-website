@@ -89,7 +89,7 @@ export const ProductCatgories = () => {
                 <div className="title justify-content-center mt-5">
                   Top Categories
                 </div>
-                <div className="top-categories_list d-flex">
+                <div className="top-categories_list row">
                   <div
                     className="col-xl-4 col-lg-4 col-md-6 col-sm-6 top-categories_item"
                     data-aos="zoom-out-up"

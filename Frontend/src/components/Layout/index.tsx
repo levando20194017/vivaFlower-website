@@ -41,49 +41,7 @@ export const Layout = () => {
       <Header />
       <div>
         <Outlet />
-        {/* {posts.length <= 0 ? (
-          <p>No user</p>
-        ) : (
-          <div>
-            {posts.slice(0, 2).map((post) => (
-              <div key={post.id}>
-                <h1>{post.title}</h1>
-                <p>{post.body}</p>
-              </div>
-            ))}
-          </div>
-        )} */}
       </div>
-      {/* <section>
-        <label>User ID</label>
-        <input
-          type="number"
-          value={post?.userId}
-          onChange={(e) =>
-            setPost((prev) => ({ ...prev, userId: e.target.value }))
-          }
-        />
-        <br />
-        <label>Post body</label>
-        <input
-          type="text"
-          value={post?.body}
-          onChange={(e) =>
-            setPost((prev) => ({ ...prev, body: e.target.value }))
-          }
-        />
-        <br />
-        <label>Post title</label>
-        <input
-          type="text"
-          value={post?.title}
-          onChange={(e) =>
-            setPost((prev) => ({ ...prev, title: e.target.value }))
-          }
-        />
-        <br />
-        <button onClick={onCreateNewPost}>Delete post</button>
-      </section> */}
       <Footer />
     </div>
   );
