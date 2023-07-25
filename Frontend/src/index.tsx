@@ -16,6 +16,7 @@ import { HomePage } from "./screens/Home";
 import AddToCartPage from "./screens/AddToCart";
 import "./index.css";
 import { OrderStatus } from "./components/OrderStatus";
+import Map from "./components/Map";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/orderstatus",
         element: <OrderStatus />,
+      },
+      {
+        path: "/map",
+        element: <Map />,
       },
     ],
   },
