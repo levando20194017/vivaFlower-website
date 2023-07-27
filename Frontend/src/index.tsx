@@ -17,6 +17,7 @@ import AddToCartPage from "./screens/AddToCart";
 import "./index.css";
 import { OrderStatus } from "./components/OrderStatus";
 import Map from "./components/Map";
+import Test from "./components/Test";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/forgotpassword",
     element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);
 
