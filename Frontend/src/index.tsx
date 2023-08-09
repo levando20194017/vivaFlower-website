@@ -16,6 +16,7 @@ import { HomePage } from "./screens/Home";
 import AddToCartPage from "./screens/AddToCart";
 import "./index.css";
 import { OrderStatus } from "./components/OrderStatus";
+import { Canvas } from "./components/Canvas";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/forgotpassword",
     element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/test",
+    element: <Canvas />,
   },
 ]);
 
