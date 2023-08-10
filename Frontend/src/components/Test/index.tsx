@@ -74,6 +74,15 @@ import React, { useState, ChangeEvent, useRef, useEffect } from "react";
 function Test(): JSX.Element {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [startPoint, setStartPoint] = useState<{ x: number; y: number } | null>(
+    null
+  );
+  const [endPoint, setEndPoint] = useState<{ x: number; y: number } | null>(
+    null
+  );
+  const [rectangles, setRectangles] = useState<
+    { x: number; y: number; width: number; height: number }[]
+  >([]);
 
   const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
@@ -99,22 +108,69 @@ function Test(): JSX.Element {
           // Vẽ bounding box
           ctx.strokeStyle = "red";
           ctx.lineWidth = 2;
-          ctx.strokeRect(100, 100, 200, 200);
+          if (startPoint && endPoint) {
+            const x = Math.min(startPoint.x, endPoint.x);
+            const y = Math.min(startPoint.y, endPoint.y);
+            const width = Math.abs(startPoint.x - endPoint.x);
+            const height = Math.abs(startPoint.y - endPoint.y);
+            ctx.strokeRect(x, y, width, height);
+          }
+          // Vẽ các hình chữ nhật đã lưu trữ
+          ctx.fillStyle = "red";
+          rectangles.forEach((rect) => {
+            ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+          });
         }
       };
       img.src = selectedImage;
     }
-  }, [selectedImage]);
+  }, [selectedImage, startPoint, endPoint, rectangles]);
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      setStartPoint({ x, y });
+      setEndPoint({ x, y });
+    }
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (canvas && startPoint) {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      setEndPoint({ x, y });
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (startPoint && endPoint) {
+      const x = Math.min(startPoint.x, endPoint.x);
+      const y = Math.min(startPoint.y, endPoint.y);
+      const width = Math.abs(startPoint.x - endPoint.x);
+      const height = Math.abs(startPoint.y - endPoint.y);
+      const newRectangle = { x, y, width, height };
+      setRectangles([...rectangles, newRectangle]);
+    }
+    setStartPoint(null);
+    setEndPoint(null);
+  };
 
   return (
     <div>
       <h1>Tải ảnh lên và hiển thị nó</h1>
       <input type="file" onChange={handleImageUpload} />
       {selectedImage && (
-        <div>
-          <canvas ref={canvasRef} />
-          <img src={selectedImage} alt="Selected" style={{ display: "none" }} />
-        </div>
+        <canvas
+          ref={canvasRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        ></canvas>
       )}
     </div>
   );
