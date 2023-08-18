@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, useRef, useEffect } from "react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./style.scss";
 
 import ReactCrop, {
@@ -132,63 +133,6 @@ function Test(): JSX.Element {
 
   return (
     <div>
-      {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
-      <div className="card m-5">
-        <div className="card-body d-flex">
-          <div className="col-1 p-2 justify-content-center align-items-center d-flex">
-            <div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Crop
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Resize
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Convert color space
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Auto-Adjust Contrast
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Tiling
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-11">
-            <div className="justify-content-center align-items-center d-flex">
-              {selectedImage && (
-                <img src={selectedImage} alt="Uploaded Image" />
-              )}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="App">
         <div className="Crop-Controls">
           <input type="file" accept="image/*" onChange={onSelectFile} />
@@ -228,13 +172,16 @@ function Test(): JSX.Element {
             onComplete={(c) => setCompletedCrop(c)}
             aspect={aspect}
           >
-            <img
-              ref={imgRef}
-              alt="Crop me"
-              src={imgSrc}
-              style={{ transform: `scale(${scale}) rotate(${rotate}deg)` }}
-              onLoad={onImageLoad}
-            />
+            <TransformWrapper>
+              <TransformComponent>
+                <img
+                  ref={imgRef}
+                  alt="Crop me"
+                  src={imgSrc}
+                  onLoad={onImageLoad}
+                />
+              </TransformComponent>
+            </TransformWrapper>
           </ReactCrop>
         )}
         {!!completedCrop && (
