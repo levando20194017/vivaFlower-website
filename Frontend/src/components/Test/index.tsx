@@ -15,6 +15,7 @@ import "react-image-crop/dist/ReactCrop.css";
 
 // This is to demonstate how to make and center a % aspect crop
 // which is a bit trickier so we use some helper functions.
+
 function centerAspectCrop(
   mediaWidth: number,
   mediaHeight: number,
@@ -35,19 +36,6 @@ function centerAspectCrop(
   );
 }
 function Test(): JSX.Element {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setSelectedImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const [imgSrc, setImgSrc] = useState("");
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -59,6 +47,20 @@ function Test(): JSX.Element {
   const [rotate, setRotate] = useState(0);
   const [aspect, setAspect] = useState<number | undefined>(16 / 9);
 
+  const [value, setValue] = useState(0);
+  const [isSliderValueVisible, setIsSliderValueVisible] = useState(false);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(event.target.value);
+    setValue(newValue);
+    setIsSliderValueVisible(true);
+    setRotate(newValue);
+  };
+
+  const handleInputBlur = () => {
+    setIsSliderValueVisible(false);
+  };
+
   function onSelectFile(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files && e.target.files.length > 0) {
       setCrop(undefined); // Makes crop preview update between images.
@@ -69,19 +71,28 @@ function Test(): JSX.Element {
       reader.readAsDataURL(e.target.files[0]);
     }
   }
-
+  function handleImageWheel(e: WheelEvent) {
+    e.preventDefault();
+    const scaleDelta = e.deltaY > 0 ? -0.1 : 0.1; // Thay đổi scale khi lăn chuột lên hoặc xuống
+    const minScale = 0.1; // Giá trị scale tối thiểu
+    const maxScale = 5; // Giá trị scale tối đa
+    const newScale = Math.min(Math.max(scale + scaleDelta, minScale), maxScale);
+    setScale(newScale);
+  }
   function onImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
     if (aspect) {
       const { width, height } = e.currentTarget;
       setCrop(centerAspectCrop(width, height, aspect));
     }
+
+    const imgElement = e.currentTarget;
+    imgElement.addEventListener("wheel", handleImageWheel);
   }
 
   function onDownloadCropClick() {
     if (!previewCanvasRef.current) {
       throw new Error("Crop canvas does not exist");
     }
-
     previewCanvasRef.current.toBlob((blob) => {
       if (!blob) {
         throw new Error("Failed to create blob");
@@ -94,7 +105,6 @@ function Test(): JSX.Element {
       hiddenAnchorRef.current!.click();
     });
   }
-
   useDebounceEffect(
     async () => {
       if (
@@ -132,63 +142,6 @@ function Test(): JSX.Element {
 
   return (
     <div>
-      {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
-      <div className="card m-5">
-        <div className="card-body d-flex">
-          <div className="col-1 p-2 justify-content-center align-items-center d-flex">
-            <div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Crop
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Resize
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Convert color space
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Auto-Adjust Contrast
-                </div>
-              </div>
-              <div className="crop mt-3">
-                <div className="justify-content-center align-items-center d-flex mt-2">
-                  <i className="bi bi-crop"></i>
-                </div>
-                <div className="justify-content-center align-items-center d-flex">
-                  Tiling
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-11">
-            <div className="justify-content-center align-items-center d-flex">
-              {selectedImage && (
-                <img src={selectedImage} alt="Uploaded Image" />
-              )}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="App">
         <div className="Crop-Controls">
           <input type="file" accept="image/*" onChange={onSelectFile} />
@@ -204,21 +157,30 @@ function Test(): JSX.Element {
             />
           </div>
           <div>
-            <label htmlFor="rotate-input">Rotate: </label>
-            <input
-              id="rotate-input"
-              type="number"
-              value={rotate}
-              disabled={!imgSrc}
-              onChange={(e) =>
-                setRotate(Math.min(180, Math.max(-180, Number(e.target.value))))
-              }
-            />
-          </div>
-          <div>
             <button onClick={handleToggleAspectClick}>
               Toggle aspect {aspect ? "off" : "on"}
             </button>
+          </div>
+          <div className="range">
+            <div
+              className={`sliderValue ${isSliderValueVisible ? "show" : ""}`}
+              style={{ left: `${value + 52.5}%` }}
+            >
+              <span>{value}</span>
+            </div>
+            <div className="field">
+              <div className="value left">-45°</div>
+              <input
+                type="range"
+                min="-45"
+                max="45"
+                value={rotate}
+                step="1"
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+              />
+              <div className="value right">45°</div>
+            </div>
           </div>
         </div>
         {!!imgSrc && (
