@@ -71,12 +71,16 @@ function Test(): JSX.Element {
       reader.readAsDataURL(e.target.files[0]);
     }
   }
+  var stepScale = 0;
   function handleImageWheel(e: WheelEvent) {
     e.preventDefault();
-    const scaleDelta = e.deltaY > 0 ? -0.1 : 0.1; // Thay đổi scale khi lăn chuột lên hoặc xuống
-    const minScale = 0.1; // Giá trị scale tối thiểu
+    const scaleDelta = e.deltaY > 0 ? -0.1 : +0.1; // Thay đổi scale khi lăn chuột lên hoặc xuống
+    stepScale = stepScale + scaleDelta;
+    if (stepScale >= 4) stepScale = 4;
+    if (stepScale <= 0) stepScale = 0;
+    const minScale = 1; // Giá trị scale tối thiểu
     const maxScale = 5; // Giá trị scale tối đa
-    const newScale = Math.min(Math.max(scale + scaleDelta, minScale), maxScale);
+    const newScale = Math.min(Math.max(scale + stepScale, minScale), maxScale);
     setScale(newScale);
   }
   function onImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
@@ -145,17 +149,6 @@ function Test(): JSX.Element {
       <div className="App">
         <div className="Crop-Controls">
           <input type="file" accept="image/*" onChange={onSelectFile} />
-          <div>
-            <label htmlFor="scale-input">Scale: </label>
-            <input
-              id="scale-input"
-              type="number"
-              step="0.1"
-              value={scale}
-              disabled={!imgSrc}
-              onChange={(e) => setScale(Number(e.target.value))}
-            />
-          </div>
           <div>
             <button onClick={handleToggleAspectClick}>
               Toggle aspect {aspect ? "off" : "on"}
